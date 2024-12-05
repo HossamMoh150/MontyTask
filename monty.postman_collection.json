@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "4778717f-954f-4dd9-bca4-d11933dc6453",
+		"name": "monty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33874515"
+	},
+	"item": [
+		{
+			"name": "register2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/auth/register \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"username\": \"testuser\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"USER\"\r\n}'\r\n\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/auth/login \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"username\": \"testuser\",\r\n  \"password\": \"password123\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Create employees",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZSI6IkFETUlOIiwiaXNzIjoibW9uZXR5QXBwIiwiZXhwIjoxNzMzMjY1NzMzLCJpYXQiOjE3MzMxNzkzMzN9.ffqN7NXuSmml83ISUYpSTYRoHxvPrK17qWCiJ54MiDU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Hossam Mohamed\",\r\n    \"department\": \"Engineering\",\r\n    \"skills\": \"Java, Spring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employees"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/employees \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"name\": \"John Doe\",\r\n    \"department\": \"Engineering\",\r\n    \"skills\": \"Java, Spring\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "show employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8080/employees\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "get employees by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8080/employees/1\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"John Doe Updated\",\r\n  \"departmentId\": \"2\",\r\n  \"skills\": \"Java, Spring Boot, Docker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT http://localhost:8080/employees/1 \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"id\": 1,\r\n  \"name\": \"John Doe Updated\",\r\n  \"departmentId\": \"2\",\r\n  \"skills\": \"Java, Spring Boot, Docker\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/search?name=John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:8080/employees/search?name=John\"\r\n"
+			},
+			"response": []
+		}
+	]
+}
